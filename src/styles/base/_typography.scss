@@ -1,0 +1,90 @@
+@font-face {
+	font-family: 'HurmeGeometricSans';
+	src: url('../../assets/fonts/HurmeGeometricSans4-Regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HurmeGeometricSans';
+	src: url('../../assets/fonts/HurmeGeometricSans4-Light.otf') format('opentype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HurmeGeometricSans';
+	src: url('../../assets/fonts/HurmeGeometricSans4-SemiBold.otf') format('opentype');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HurmeGeometricSans';
+	src: url('../../assets/fonts/HurmeGeometricSans4-Bold.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+* {
+	font-family: 'HurmeGeometricSans', sans-serif;
+}
+
+html {
+	font-size: 16px;
+	line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 1.75rem;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+h5 {
+	font-size: 1.1rem;
+	font-weight: normal;
+}
+
+h6 {
+	font-size: 1rem;
+	font-weight: 300;
+}
+
+label,
+input,
+select,
+button {
+	line-height: 1;
+	font-size: 1rem;
+}
+
+table thead th {
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+table tbody td {
+	font-size: 1rem;
+	font-weight: 300;
+}

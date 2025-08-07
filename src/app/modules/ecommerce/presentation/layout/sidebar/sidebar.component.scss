@@ -1,0 +1,150 @@
+:host {
+	display: contents;
+}
+
+.overlay {
+	&.hide {
+		width: 0%;
+		overflow: hidden;
+	}
+
+	.close {
+		display: none;
+	}
+
+	@media screen and (max-width: 768px) {
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		height: 100%;
+		width: 100%;
+
+		z-index: 2000;
+
+		display: flex;
+
+		background-color: rgb(0, 0, 0, 0.5);
+
+		overflow-y: scroll;
+
+		.close {
+			padding: 0.75rem;
+			display: block;
+		}
+	}
+
+	aside {
+		background-color: var(--color-bg-alt);
+		box-shadow: var(--box-shadow);
+		width: 14rem;
+		height: fit-content;
+		min-height: 100%;
+		padding: 0.5rem;
+
+		img {
+			width: 80%;
+			margin: auto;
+			margin-bottom: 0.25rem;
+		}
+
+		nav {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+			padding: 0 0.25rem;
+
+			> section:first-of-type {
+				div {
+					width: 100%;
+					background-color: var(--color-text-acc);
+				}
+			}
+
+			section {
+				display: flex;
+				flex-direction: column;
+				gap: 0.25rem;
+
+				p {
+					color: var(--color-text-alt);
+					transition: color 0.2s;
+				}
+
+				div {
+					border-radius: var(--border-internal-radius);
+					background-color: var(--color-text-alt);
+					margin-bottom: 0.25rem;
+					height: 0.1rem;
+					width: 0;
+					border: none;
+					transition: all 0.2s;
+				}
+
+				a,
+				button {
+					background-color: transparent;
+					border: none;
+					position: relative;
+					color: var(--color-text);
+					padding-left: 2rem;
+					height: 1.7rem;
+					display: flex;
+					align-items: center;
+					transition: margin 0.2s;
+
+					span {
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 1.7rem;
+						width: 1.7rem;
+						display: flex;
+						align-items: center;
+						gap: 0.2rem;
+
+						overflow: hidden;
+
+						border-radius: var(--border-internal-radius);
+						background-color: var(--color-primary);
+						color: var(--color-text-inv);
+						transition: width 0.2s;
+
+						app-icon {
+							height: 1.7rem;
+							min-width: 1.7rem;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						}
+					}
+				}
+
+				&.active,
+				&:hover {
+					p {
+						color: var(--color-text-acc);
+					}
+
+					div {
+						width: 100%;
+						background-color: var(--color-text-acc);
+					}
+
+					a,
+					button {
+						&.active {
+							span {
+								width: 100%;
+							}
+						}
+
+						&:hover:not(.active) {
+							margin-left: 25px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

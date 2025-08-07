@@ -1,0 +1,141 @@
+/********************************************************************************/
+// FORMULARIOS
+/********************************************************************************/
+.form-group,
+.form-check,
+.form-input {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.form-check {
+	margin-left: 12px;
+}
+
+.form-group input,
+.form-check input,
+.form-input input {
+	border-radius: 50px;
+	border: 2px solid;
+	border-color: var(--color-primary);
+}
+
+.form-check input {
+	border-radius: 50%;
+}
+
+.form-group i,
+.form-input i {
+	background-color: var(--color-primary);
+	border-radius: 50%;
+	position: absolute;
+	margin-left: 5px;
+	font-size: 1rem;
+	color: white;
+	padding: 7px;
+}
+
+.form-group input,
+.form-input input {
+	padding-left: calc(1rem + 22px);
+}
+
+#Inicio {
+	//FONDO
+	background-color: #f0f1f3;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	//DIMENSION
+	height: 100vh;
+
+	//POSICION
+	position: relative;
+
+	//DISPOSICION
+	padding: 5%;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+}
+
+#Inicio .information {
+	padding: 0;
+	width: 450px;
+	background: #fff;
+	border-radius: 25px;
+	box-shadow: 20px 20px 0px rgba(255, 255, 255, 0.1);
+}
+
+#Inicio .information .login {
+	position: relative;
+	text-align: center;
+
+	padding: 2rem 2.25rem;
+	border-radius: var(--border-external-radius);
+	background-color: var(--color-bg-alt);
+	box-shadow: var(--box-shadow);
+}
+
+#Inicio .information .login h1 {
+	margin-bottom: 30px;
+	color: var(--color-primary);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#Inicio .information .login .btn {
+	background-color: var(--color-primary);
+	margin: 8px 0 24px 0;
+	border-radius: 25px;
+	padding: 6px 18px;
+	color: white;
+}
+
+#Inicio .information .login p {
+	font-size: 14px;
+	color: #b9b9b9;
+}
+
+#Inicio .information .login button {
+	text-decoration: none;
+	border: none;
+	background-color: transparent;
+	color: var(--color-primary);
+	font-size: 16px;
+}
+
+#Inicio .information .banner {
+	position: relative;
+}
+
+#Inicio .information img.logo {
+	width: 150px;
+	margin-bottom: 1rem;
+}
+
+#Inicio .information img.sub-logo {
+	width: 150px;
+}
+
+#Inicio .information .banner .carousel {
+	border-bottom-right-radius: 22px;
+	border-top-right-radius: 22px;
+	overflow: hidden;
+}
+
+#Inicio .information .banner .carousel,
+#Inicio .information .banner .carousel .carousel-inner,
+#Inicio .information .banner .carousel .carousel-inner .carousel-item {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}

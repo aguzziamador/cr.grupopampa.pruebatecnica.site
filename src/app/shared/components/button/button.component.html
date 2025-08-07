@@ -1,0 +1,12 @@
+<button
+	#appButton
+	[type]="type"
+	[ngClass]="customClass"
+	[disabled]="disabled"
+	(click)="buttonClick.emit()"
+>
+	<app-icon *ngIf="icon" [icon]="icon" [fixed]="true"></app-icon>
+	{{ text }}
+</button>
+
+<app-tooltip [text]="tooltip" [target]="appButton" *ngIf="tooltip"></app-tooltip>

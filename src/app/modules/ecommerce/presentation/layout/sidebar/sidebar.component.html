@@ -1,0 +1,31 @@
+<div class="overlay" [class.hide]="!ssService.showSidebar">
+	<aside>
+		<img src="https://cpic.or.cr/wp-content/uploads/2025/07/Grupo-Pampa.png" alt="Logo" />
+		<nav>
+			<section *ngFor="let section of menu" routerLinkActive="active">
+				<p>{{ section.title }}</p>
+				<div></div>
+				<a *ngFor="let item of section.items" [routerLink]="item.route" routerLinkActive="active">
+					<span>
+						<app-icon [icon]="item.icon" [fixed]="true"></app-icon>
+						{{ item.label }}
+					</span>
+					{{ item.label }}
+				</a>
+			</section>
+			<section>
+				<p>Sesión</p>
+				<div></div>
+				<button (click)="CerrarSesion()">
+					<span>
+						<app-icon [icon]="'right-to-bracket'" [fixed]="true"></app-icon>
+					</span>
+					Cerrar sesión
+				</button>
+			</section>
+		</nav>
+	</aside>
+	<div class="close">
+		<app-button [icon]="'times'" (buttonClick)="Toggle()"></app-button>
+	</div>
+</div>

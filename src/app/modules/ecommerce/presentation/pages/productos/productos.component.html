@@ -1,0 +1,6 @@
+<app-card>
+	<app-form [form]="form" [(ngModel)]="formFilter"> </app-form>
+</app-card>
+<div class="products-list">
+	<app-product-card *ngFor="let item of productos" [product]="item"></app-product-card>
+</div>

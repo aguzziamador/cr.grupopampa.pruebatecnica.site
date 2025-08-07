@@ -1,0 +1,53 @@
+{
+	"name": "cr.grupopampa.pruebatecnica.site",
+	"version": "1.0.0.0",
+	"description": "Prueba técnica para el puesto de desarrollador en Grupo Pampa",
+	"author": "Robert Aguzzi Amador",
+	"scripts": {
+		"lint": "ng lint",
+		"lint-fix": "ng lint --fix",
+		"format": "prettier --write \"src/**/*.{ts,html}\""
+	},
+	"private": true,
+	"dependencies": {
+		"@angular/animations": "^19.1.6",
+		"@angular/common": "^19.1.6",
+		"@angular/compiler": "^19.1.6",
+		"@angular/core": "^19.1.6",
+		"@angular/forms": "^19.1.6",
+		"@angular/platform-browser": "^19.1.6",
+		"@angular/platform-browser-dynamic": "^19.1.6",
+		"@angular/router": "^19.1.6",
+		"@fortawesome/angular-fontawesome": "^1.0.0",
+		"@fortawesome/free-brands-svg-icons": "^6.7.1",
+		"@fortawesome/free-regular-svg-icons": "^6.7.1",
+		"@fortawesome/free-solid-svg-icons": "^6.7.1",
+		"@popperjs/core": "^2.11.8",
+		"crypto-js": "^4.2.0",
+		"rxjs": "~7.8.0",
+		"sweetalert2": "^11.17.2",
+		"tslib": "^2.3.0",
+		"zone.js": "~0.15.0"
+	},
+	"devDependencies": {
+		"@angular-devkit/build-angular": "^19.1.7",
+		"@angular/cli": "^19.1.7",
+		"@angular/compiler-cli": "^19.1.6",
+		"@types/crypto-js": "^4.2.2",
+		"@types/jasmine": "~5.1.0",
+		"angular-eslint": "19.1.0",
+		"eslint": "^9.16.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-prettier": "^5.2.3",
+		"eslint-plugin-security": "^3.0.1",
+		"jasmine-core": "~5.5.0",
+		"karma": "~6.4.0",
+		"karma-chrome-launcher": "~3.2.0",
+		"karma-coverage": "~2.2.0",
+		"karma-jasmine": "~5.1.0",
+		"karma-jasmine-html-reporter": "~2.1.0",
+		"prettier": "^3.4.2",
+		"typescript": "~5.7.2",
+		"typescript-eslint": "8.18.0"
+	}
+}

@@ -1,0 +1,29 @@
+:host {
+	display: contents;
+}
+
+.input-group {
+	span {
+		color: var(--color-text-alt);
+		font-size: 0.85rem;
+		padding: 0 0.125rem;
+		margin: 0 0 0 0.5rem;
+	}
+
+	textarea {
+		border-radius: var(--border-internal-radius);
+		background-color: var(--color-accent);
+		color: var(--color-text);
+		padding: 0.5rem 1rem;
+		border: none;
+		max-width: 100%;
+		min-width: 100%;
+		min-height: 2.2rem;
+		outline: none;
+		margin-top: 0.5rem;
+
+		&:disabled {
+			color: var(--color-text-alt);
+		}
+	}
+}

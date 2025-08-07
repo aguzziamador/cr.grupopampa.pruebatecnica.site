@@ -1,0 +1,18 @@
+.totales {
+	margin: 1.5rem 0;
+
+	.desglose {
+		display: flex;
+
+		p:nth-child(2n) {
+			margin-left: auto;
+		}
+	}
+
+	.desglose.final {
+		padding: 5px 0;
+		margin: 5px 0 0 0;
+		border-top: 2px solid black;
+		font-weight: 700;
+	}
+}

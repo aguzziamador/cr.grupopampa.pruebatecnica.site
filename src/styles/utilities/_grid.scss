@@ -1,0 +1,54 @@
+@use 'sass:math';
+
+$grid-gap: 0.5rem;
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: end;
+	gap: $grid-gap;
+
+	&.no-gap {
+		gap: 0;
+	}
+}
+
+$grid-columns: 12;
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+.col-auto {
+	flex: 1 1 auto;
+	width: auto !important;
+	max-width: 100% !important;
+}
+
+@mixin make-col($size) {
+	flex: 1 1 calc(math.percentage(calc($size / $grid-columns)) - $grid-gap) !important;
+	max-width: math.percentage(calc($size / $grid-columns)) !important;
+	height: -webkit-fill-available !important;
+}
+
+@each $breakpoint, $width in $grid-breakpoints {
+	@if $breakpoint == xs {
+		@for $i from 1 through $grid-columns {
+			.col-#{$i} {
+				@include make-col($i);
+			}
+		}
+	} @else {
+		@media (min-width: $width) {
+			@for $i from 1 through $grid-columns {
+				.col-#{$breakpoint}-#{$i} {
+					@include make-col($i);
+				}
+			}
+		}
+	}
+}

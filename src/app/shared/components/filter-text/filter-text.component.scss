@@ -1,0 +1,36 @@
+.filter {
+	display: inline;
+	opacity: 0.5;
+
+	&.active {
+		opacity: 1;
+	}
+}
+
+.modal {
+	background-color: var(--color-bg-alt);
+	border: 2px solid var(--color-accent);
+	border-radius: var(--border-internal-radius);
+	padding: 0.5rem;
+	width: 15rem;
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 0 0.5rem 0;
+
+		border-bottom: 2px solid var(--color-accent);
+	}
+
+	.actions {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		gap: 0.5rem;
+	}
+
+	&.hidden {
+		display: none;
+	}
+}

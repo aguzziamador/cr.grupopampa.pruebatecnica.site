@@ -1,0 +1,41 @@
+<div class="row align-start">
+	<div class="col-xl-9 col-lg-8 col-12 left">
+		<app-card [customClass]="'fill-available'">
+			<h1>¡Saludos, <span class="highlight">Bienvenido</span>!</h1>
+			<p>
+				Desde 1977, Grupo Pampa ha sido pionero en importar y distribuir vinos, licores y bebidas de
+				calidad en Costa Rica.
+				<br />
+				Con las divisiones <span class="highlight">Pamco</span> y
+				<span class="highlight">Summit Trade</span>, llegamos a todo el país, sirviendo a cadenas,
+				bares, restaurantes, hoteles y tiendas especializadas.
+				<br />
+				Nuestro propósito es crear momentos únicos a través de un portafolio internacional rico en
+				variedad y excelencia.
+				<br />
+				<br />
+				En nuestro showroom y tienda <span class="highlight">Rack9</span>, ofrecemos una experiencia
+				inmersiva: degustación, maridajes, coctelería premium y asesoría especializada.
+			</p>
+		</app-card>
+	</div>
+	<div class="col-xl-3 col-lg-4 col-12 right">
+		<app-card [customClass]="'fill-available'">
+			<h2>🌤️ {{ weather?.name }}</h2>
+
+			<div class="weather-main">
+				<div>
+					<p class="temperature">{{ weather?.main?.temp }} °C</p>
+					<p class="description">{{ weather?.weather[0]?.description | titlecase }}</p>
+					<p>Sensación: {{ weather?.main?.feels_like }} °C</p>
+				</div>
+			</div>
+
+			<div class="weather-extra">
+				<p>Humedad: {{ weather?.main?.humidity }} %</p>
+				<p>Viento: {{ weather?.wind?.speed }} km/h</p>
+				<p>Actualizado: {{ weather?.dt * 1000 | date: 'shortTime' }}</p>
+			</div>
+		</app-card>
+	</div>
+</div>

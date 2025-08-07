@@ -1,0 +1,134 @@
+<div class="product-card">
+	<div class="header">
+		<button class="header-button" (click)="ViewDetails()">
+			<span class="discount">-{{ product.discount }}%</span>
+			<img [src]="product.image" [alt]="product.title" />
+		</button>
+		<div class="add" [ngClass]="{ active: active }">
+			<app-button
+				[icon]="'cart-plus'"
+				[fixed]="true"
+				(click)="AddToCart()"
+				[tooltip]="'Agregar al carrito'"
+			></app-button>
+			<div class="quantity" *ngIf="active">
+				<app-button
+					[tooltip]="'Aumentar cantidad'"
+					[icon]="'chevron-up'"
+					[fixed]="true"
+					(click)="cantidad = cantidad + 1"
+				></app-button>
+				{{ cantidad }}
+				<app-button
+					[tooltip]="'Disminuir cantidad'"
+					[icon]="'chevron-down'"
+					[fixed]="true"
+					(click)="cantidad = cantidad > 1 ? cantidad - 1 : cantidad"
+				></app-button>
+			</div>
+			<app-button
+				[icon]="'times'"
+				[fixed]="true"
+				(click)="Close()"
+				[tooltip]="'Cerrar'"
+				*ngIf="active"
+			></app-button>
+		</div>
+	</div>
+	<div class="body">
+		<p class="title">{{ product.title }}</p>
+		<p class="price">
+			<span>${{ product.price * (1 - product.discount / 100) | currencyPipe }}</span>
+			<span class="last">${{ product.price | currencyPipe }}</span>
+		</p>
+	</div>
+</div>
+
+<div class="modal" *ngIf="showModal">
+	<div class="modal-content">
+		<app-card>
+			<app-form [form]="form">
+				<div class="row">
+					<div class="col-md-6 images">
+						<img class="principal" [src]="product.image" alt="" />
+						<div class="secondary">
+							<ng-container *ngFor="let item of product.images">
+								<button *ngIf="item.image !== product.image" (click)="product.image = item.image">
+									<img alt="thumbnail" style="cursor: pointer" [src]="item.image" />
+								</button>
+							</ng-container>
+						</div>
+					</div>
+					<div class="information col-md-6">
+						<div class="section">
+							<div class="rating">
+								<span *ngFor="let star of GetStars()">
+									<ng-container [ngSwitch]="star">
+										<span *ngSwitchCase="'full'">
+											<app-icon [fixed]="true" [icon]="'star'"></app-icon>
+										</span>
+										<span *ngSwitchCase="'half'">
+											<app-icon [fixed]="true" [icon]="'star-half-stroke'"></app-icon>
+										</span>
+									</ng-container>
+								</span>
+
+								<span class="count">({{ product.rating.count }}) Comentarios</span>
+							</div>
+							<h2>{{ product.title }}</h2>
+							<p class="tag">
+								Precio:
+								<span>${{ product.price * (1 - product.discount / 100) | currencyPipe }}</span>
+								<span class="strikethrough">${{ product.price | currencyPipe }}</span>
+							</p>
+						</div>
+						<div class="section">
+							<strong>Descripción</strong>
+							{{ product.description }}
+						</div>
+						<div class="section">
+							<p class="tag">
+								<strong>Marca: </strong>
+								Ejemplo de marca
+							</p>
+							<p class="tag">
+								<strong>Categoría: </strong>
+								{{ product.category }}
+							</p>
+							<p class="tag">
+								<strong>Subcategoría: </strong>
+								Ejemplo de subcategoria
+							</p>
+						</div>
+						<div class="section add">
+							<div class="quantity">
+								<app-button
+									[customClass]="'secondary'"
+									[tooltip]="'Aumentar cantidad'"
+									[icon]="'chevron-up'"
+									[fixed]="true"
+									(click)="cantidad = cantidad + 1"
+								></app-button>
+								{{ cantidad }}
+								<app-button
+									[customClass]="'secondary'"
+									[tooltip]="'Disminuir cantidad'"
+									[icon]="'chevron-down'"
+									[fixed]="true"
+									(click)="cantidad = cantidad > 1 ? cantidad - 1 : cantidad"
+								></app-button>
+							</div>
+							<app-button
+								[icon]="'cart-plus'"
+								[fixed]="true"
+								(click)="AddToCart()"
+								[text]="'Agregar'"
+								[customClass]="'primary'"
+							></app-button>
+						</div>
+					</div>
+				</div>
+			</app-form>
+		</app-card>
+	</div>
+</div>

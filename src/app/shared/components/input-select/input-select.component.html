@@ -1,0 +1,12 @@
+<div class="input-group" [ngClass]="customClass">
+	<div class="input-label">
+		<div>
+			<label>
+				<select [(ngModel)]="model" (change)="ngChange()" [class.selected]="model !== -1" [disabled]="disabled">
+					<option *ngFor="let item of list" [value]="item[listKey]">{{ item[listValue] }}</option>
+				</select>
+				<span>{{ label }}</span>
+			</label>
+		</div>
+	</div>
+</div>

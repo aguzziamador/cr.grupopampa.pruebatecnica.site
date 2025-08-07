@@ -1,0 +1,93 @@
+<div class="table-component">
+	<div class="table-header">
+		<h4>{{ title }} ( {{ items.length }} )</h4>
+		<div class="table-actions">
+			<app-button
+				*ngIf="this.exportEvent.observers.length !== 0"
+				[tooltip]="'Exportar'"
+				[icon]="'download'"
+				[customClass]="'secondary'"
+				(buttonClick)="exportEvent.emit(filter)"
+			></app-button>
+			<app-button
+				*ngIf="this.refreshEvent.observers.length !== 0"
+				[tooltip]="'Recargar'"
+				[icon]="'sync'"
+				[customClass]="'secondary'"
+				(buttonClick)="refreshEvent.emit(filter)"
+			></app-button>
+			<app-button
+				*ngIf="this.addEvent.observers.length !== 0"
+				[text]="'Agregar'"
+				[icon]="'plus'"
+				[customClass]="'secondary'"
+				(buttonClick)="addEvent.emit()"
+			></app-button>
+			<app-button
+				*ngIf="this.closeEvent.observers.length !== 0"
+				[tooltip]="'Salir'"
+				[icon]="'times'"
+				[customClass]="'secondary'"
+				(buttonClick)="closeEvent.emit()"
+			></app-button>
+		</div>
+	</div>
+
+	<div class="table-filters" *ngIf="filters.length !== 0">
+		<app-form
+			[form]="filters"
+			[(ngModel)]="filter"
+			(ngModelChange)="refreshEvent.emit(filter)"
+		></app-form>
+	</div>
+
+	<div class="table-responsive">
+		<table>
+			<thead>
+				<tr>
+					<th *ngFor="let columna of columns" [ngClass]="columna.class">{{ columna.label }}</th>
+					<th *ngIf="actions.length !== 0" class="text-center">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let fila of paginatedItems">
+					<td *ngFor="let columna of columns" [ngClass]="columna.class">
+						{{ fila[columna.name] }}
+					</td>
+
+					<td *ngIf="actions.length !== 0" class="table-actions">
+						<app-button
+							*ngFor="let action of actions"
+							(buttonClick)="action.action(fila)"
+							[text]="action.label"
+							[icon]="action.icon"
+							[tooltip]="action.tooltip"
+							[customClass]="'secondary'"
+						></app-button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- Paginación -->
+	<div class="pagination-container">
+		<app-button
+			[tooltip]="'Anterior'"
+			[icon]="'arrow-left'"
+			[customClass]="'secondary'"
+			(buttonClick)="changePage(currentPage - 1)"
+			[disabled]="currentPage === 1"
+		></app-button>
+
+		<span>Página {{ currentPage }} de {{ totalPages }}</span>
+
+		<app-button
+			[tooltip]="'Siguiente'"
+			[icon]="'arrow-right'"
+			[customClass]="'secondary reverse'"
+			(buttonClick)="changePage(currentPage + 1)"
+			[disabled]="currentPage === totalPages"
+		></app-button>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<div class="input-group" [ngClass]="customClass">
+	<span>{{ label }}</span>
+	<textarea
+		#input="ngModel"
+		placeholder="Digite..."
+		[disabled]="disabled"
+		[required]="required"
+		[maxlength]="max"
+		[minlength]="min"
+		[autocomplete]="autoComplete"
+		[autocapitalize]="autoCapitalize"
+		[(ngModel)]="model"
+		(focus)="ngFocus()"
+		(blur)="ngBlur()"
+		(input)="ngChange()"
+	></textarea>
+</div>

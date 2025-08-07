@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-md-8 col-12">
+		<app-card>
+			<app-table [columns]="tableColumns" [items]="tableItems" [actions]="tableActions">
+			</app-table>
+		</app-card>
+	</div>
+	<div class="col-md-4 col-12">
+		<app-card>
+			<app-form [form]="form">
+				<app-input-text-area [(ngModel)]="comentario" [label]="'Comentarios'"></app-input-text-area>
+				<div class="totales">
+					<div class="desglose">
+						<p>Subtotal</p>
+						<p>${{ CalcularSubtotalTotal() | currencyPipe }}</p>
+					</div>
+					<div class="desglose">
+						<p>Descuento</p>
+						<p>${{ CalcularDescuentoTotal() | currencyPipe }}</p>
+					</div>
+					<div class="desglose final">
+						<p>Total</p>
+						<p>${{ CalcularTotalTotal() | currencyPipe }}</p>
+					</div>
+				</div>
+				<app-button
+					(click)="Guardar()"
+					[disabled]="ssService.carrito.length === 0"
+					[text]="'Realizar pedido'"
+					[customClass]="'primary full justify-center'"
+				></app-button>
+			</app-form>
+		</app-card>
+	</div>
+</div>

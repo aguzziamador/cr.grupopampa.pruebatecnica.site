@@ -1,0 +1,48 @@
+.left {
+	text-align: left;
+	h1 {
+		margin-bottom: 1rem;
+	}
+	p {
+		line-height: 1.5;
+	}
+}
+
+.right {
+	.weather-main {
+		margin: 2rem 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+
+		img {
+			width: 64px;
+			height: 64px;
+		}
+
+		.temperature {
+			font-size: 2rem;
+			font-weight: bold;
+		}
+
+		.description {
+			color: #666;
+			margin: 0.25rem 0;
+		}
+	}
+
+	.weather-extra {
+		margin-top: 1rem;
+		font-size: 0.9rem;
+		color: #333;
+	}
+}
+
+.highlight {
+	background-color: var(--color-primary);
+	color: var(--color-text-inv);
+	padding: 0px 0.5rem;
+	border-radius: var(--border-internal-radius);
+	font-weight: 600;
+}

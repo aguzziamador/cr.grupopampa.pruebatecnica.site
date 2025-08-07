@@ -1,0 +1,32 @@
+form {
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1rem 3rem;
+
+		border-bottom: 2px solid var(--color-accent);
+
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+
+		.actions {
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			flex: 1;
+			max-width: fit-content;
+		}
+	}
+
+	.footer {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		gap: 0.5rem;
+		margin-top: 0.5rem;
+	}
+}

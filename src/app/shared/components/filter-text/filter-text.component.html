@@ -1,0 +1,30 @@
+<!-- <div #filter class="filter" [class.active]="valueFinal !== ''">
+	<app-button
+		[text]="valueFinal !== '' ? valueFinal : 'Referencia'"
+		[customClass]="valueFinal !== '' ? 'secondary' : 'dashed'"
+		(buttonClick)="abrirModal()"
+	></app-button>
+</div>
+
+<div #modal class="modal hidden">
+	<div class="header">
+		<div class="caption">
+			<app-icon [icon]="'filter'"></app-icon>
+			Filtrar
+		</div>
+		<app-button class="final" [icon]="'xmark'" (buttonClick)="cerrarModal()"></app-button>
+	</div>
+	<div class="body">
+		<app-input-text
+			[(ngModel)]="value"
+			[placeholder]="'Numero de referencia'"
+			[maxlength]="100"
+			(keydown.enter)="guardar()"
+		></app-input-text>
+	</div>
+	<div class="actions">
+		<app-button [customClass]="'secondary'" [icon]="'eraser'" (buttonClick)="borrar()"></app-button>
+		<app-button [customClass]="'primary'" [icon]="'check'" (buttonClick)="guardar()"></app-button>
+	</div>
+</div>
+ -->

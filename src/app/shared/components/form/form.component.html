@@ -1,0 +1,86 @@
+<form *ngIf="form && model" (ngSubmit)="form.submit()" ngNativeValidate>
+	<div class="header" *ngIf="form.title || form.actions">
+		<h4>{{ form.title }}</h4>
+		<div class="actions">
+			<app-button
+				*ngFor="let action of form.actions"
+				(buttonClick)="action.action()"
+				[tooltip]="action.tooltip"
+				[text]="action.label"
+				[icon]="action.icon"
+				[customClass]="'secondary flex'"
+			></app-button>
+		</div>
+	</div>
+	<div class="row">
+		<ng-container *ngFor="let field of form.fields">
+			<ng-container [ngSwitch]="field.type">
+				<app-input-text-area
+					*ngSwitchCase="'text-area'"
+					[field]="field"
+					[(ngModel)]="model[field.name]"
+					[ngModelOptions]="{ standalone: true }"
+					(ngModelChange)="ngChange()"
+				></app-input-text-area>
+				<app-input-text
+					*ngSwitchCase="'text'"
+					[field]="field"
+					[(ngModel)]="model[field.name]"
+					[ngModelOptions]="{ standalone: true }"
+					(ngModelChange)="ngChange()"
+				></app-input-text>
+				<app-input-text
+					*ngSwitchCase="'email'"
+					[field]="field"
+					[(ngModel)]="model[field.name]"
+					[ngModelOptions]="{ standalone: true }"
+					(ngModelChange)="ngChange()"
+				></app-input-text>
+				<app-input-text
+					*ngSwitchCase="'password'"
+					[field]="field"
+					[(ngModel)]="model[field.name]"
+					[ngModelOptions]="{ standalone: true }"
+					(ngModelChange)="ngChange()"
+				></app-input-text>
+				<app-input-date
+					*ngSwitchCase="'date'"
+					[field]="field"
+					[(ngModel)]="model[field.name]"
+					[ngModelOptions]="{ standalone: true }"
+					(ngModelChange)="ngChange()"
+				></app-input-date>
+				<app-input-time
+					*ngSwitchCase="'time'"
+					[field]="field"
+					[(ngModel)]="model[field.name]"
+					[ngModelOptions]="{ standalone: true }"
+					(ngModelChange)="ngChange()"
+				></app-input-time>
+				<app-input-select
+					*ngSwitchCase="'select'"
+					[field]="field"
+					[(ngModel)]="model[field.name]"
+					[ngModelOptions]="{ standalone: true }"
+					(ngModelChange)="ngChange()"
+				></app-input-select>
+				<app-input-modal-select
+					*ngSwitchCase="'modal-select'"
+					[field]="field"
+					[(ngModel)]="model[field.name]"
+					[ngModelOptions]="{ standalone: true }"
+					(ngModelChange)="ngChange()"
+				></app-input-modal-select>
+			</ng-container>
+		</ng-container>
+	</div>
+	<ng-content></ng-content>
+	<div class="footer">
+		<app-button
+			*ngIf="this.form.submit"
+			[type]="'submit'"
+			[text]="'Guardar'"
+			[customClass]="'primary'"
+		></app-button>
+	</div>
+</form>

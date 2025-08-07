@@ -1,0 +1,21 @@
+<div class="layout">
+	<app-sidebar></app-sidebar>
+	<main>
+		<app-breadcrumbs></app-breadcrumbs>
+		<router-outlet></router-outlet>
+	</main>
+</div>
+
+<button
+	class="carrito"
+	[routerLink]="['/ecommerce/carrito']"
+	routerLinkActive="router-link-active"
+	type="button"
+>
+	<div class="numero">{{ ContarCarrito() }}</div>
+	<app-icon [icon]="'shopping-cart'" [fixed]="true"></app-icon>
+</button>
+
+<div class="spinner" *ngIf="ssService.showSpinner">
+	<div class="blob blob-0"></div>
+</div>

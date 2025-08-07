@@ -1,0 +1,31 @@
+<div class="input-group" [ngClass]="customClass">
+	<div class="input-label">
+		<div>
+			<button
+				[class.selected]="model !== -1"
+				(click)="OpenModal()"
+				type="button"
+				[disabled]="disabled"
+			>
+				<span class="value">{{ Seleccionado() }}</span>
+				<span class="label">{{ label }}</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<div class="modal-overlay" *ngIf="mostrarModal">
+	<div class="modal-contenido">
+		<app-card>
+			<app-table
+				[columns]="tableColumns"
+				[items]="tableItems"
+				[actions]="tableActions"
+				[filters]="filters"
+				(refreshEvent)="Filtrar($event)"
+				(closeEvent)="this.mostrarModal = false"
+			>
+			</app-table>
+		</app-card>
+	</div>
+</div>

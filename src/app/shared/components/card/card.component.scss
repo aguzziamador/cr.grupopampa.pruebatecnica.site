@@ -1,0 +1,18 @@
+:host {
+	display: contents;
+}
+
+.card {
+	padding: 1rem 1.25rem;
+	border-radius: var(--border-external-radius);
+	background-color: var(--color-bg-alt);
+	box-shadow: var(--box-shadow);
+
+	&.fill-available {
+		min-height: 100%;
+	}
+
+	&.fill-available-flex {
+		min-height: -webkit-fill-available;
+	}
+}
